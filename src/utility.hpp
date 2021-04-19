@@ -61,6 +61,7 @@ namespace utility{
 	void get_imagenet_dataset(
 		const std::string& image_path_file               ,
 		const std::string& label_path_file               ,
+		const std::string& image_root_dir                ,
 		std::vector<dlib::matrix<dlib::rgb_pixel>>& images,
 		std::vector<unsigned long>&                labels
 	);

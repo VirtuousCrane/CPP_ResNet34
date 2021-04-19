@@ -163,6 +163,7 @@ namespace utility{
 	void get_imagenet_dataset(
 		const string& image_path_file,
 		const string& label_path_file,
+		const string& image_root_dir ,
 		std::vector<dlib::matrix<dlib::rgb_pixel>>& images,
 		std::vector<unsigned long>&                 labels
 	){
@@ -180,14 +181,14 @@ namespace utility{
 			dlib::matrix<dlib::rgb_pixel> img;
 			while(true){
 				try{
-					dlib::load_image(img, path);
-					crop_image_dimension(img, img, 224, rnd);
+					dlib::load_image(img, image_root_dir + path);
 					break;
 				}catch(...){
 					continue;
 				}
 			}
 
+      crop_image_dimension(img, img, 224, rnd);
 			if(label != previous_label){
 				++numeric_label;
 				previous_label = label;
@@ -195,6 +196,18 @@ namespace utility{
 
 			images.push_back(img)  ;
 			labels.push_back(numeric_label);
+
+      crop_image_dimension(img, img, 224, rnd);
+      images.push_back(img);
+      labels.push_back(numeric_label);
+
+      crop_image_dimension(img, img, 224, rnd);
+      images.push_back(img);
+      labels.push_back(numeric_label);
+
+      crop_image_dimension(img, img, 224, rnd);
+      images.push_back(img);
+      labels.push_back(numeric_label);
 		}
 	}
 }
