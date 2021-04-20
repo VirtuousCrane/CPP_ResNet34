@@ -23,6 +23,9 @@ const string TRAINING_LABEL_PATH = "";
 const string TESTING_IMAGE_PATH  = "";
 const string TESTING_LABEL_PATH  = "";
 
+const string TRAINING_IMAGE_ROOT = "";
+const string TESTING_IMAGE_ROOT  = "";
+
 const string SYNC_FILE     = "";
 
 const string NETWORK_PATH = "";
@@ -167,12 +170,14 @@ int main(int argc, char** argv) try{
 	utility::get_imagenet_dataset(
 				TRAINING_IMAGE_PATH,
 				TRAINING_LABEL_PATH,
+				TRAINING_IMAGE_ROOT,
 				training_images    ,
 				training_labels
 				);
 	utility::get_imagenet_dataset(
 				TESTING_IMAGE_PATH,
 				TESTING_LABEL_PATH,
+				TESTING_IMAGE_ROOT,
 				testing_images    ,
 				testing_labels
 				);
