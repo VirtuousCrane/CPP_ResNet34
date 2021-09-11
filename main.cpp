@@ -89,7 +89,7 @@ template<
 	template <typename> class ACTIVATION,
 	typename SUBNET
 	>
-using residual_downsampling_not_activated =     add_prev2<
+using residual_downsampling_not_activated = add_prev2<
 
 						con<N, 1, 1, 2, 2,
 						skip1<
@@ -173,14 +173,14 @@ int main(int argc, char** argv) try{
 				TRAINING_IMAGE_ROOT,
 				training_images    ,
 				training_labels
-				);
+	);
 	utility::get_imagenet_dataset(
 				TESTING_IMAGE_PATH,
 				TESTING_LABEL_PATH,
 				TESTING_IMAGE_ROOT,
 				testing_images    ,
 				testing_labels
-				);
+	);
 
 	const auto number_of_classes = training_labels.back()+1;
 

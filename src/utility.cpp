@@ -188,26 +188,26 @@ namespace utility{
 				}
 			}
 
-      crop_image_dimension(img, img, 224, rnd);
-			if(label != previous_label){
-				++numeric_label;
-				previous_label = label;
-			}
+            crop_image_dimension(img, img, 224, rnd);
+            if(label != previous_label){
+                ++numeric_label;
+                previous_label = label;
+            }
 
-			images.push_back(img)  ;
-			labels.push_back(numeric_label);
+            images.push_back(img)  ;
+            labels.push_back(numeric_label);
 
-      crop_image_dimension(img, img, 224, rnd);
-      images.push_back(img);
-      labels.push_back(numeric_label);
+            crop_image_dimension(img, img, 224, rnd);
+            images.push_back(img);
+            labels.push_back(numeric_label);
 
-      crop_image_dimension(img, img, 224, rnd);
-      images.push_back(img);
-      labels.push_back(numeric_label);
+            crop_image_dimension(img, img, 224, rnd);
+            images.push_back(img);
+            labels.push_back(numeric_label);
 
-      crop_image_dimension(img, img, 224, rnd);
-      images.push_back(img);
-      labels.push_back(numeric_label);
-		}
-	}
+            crop_image_dimension(img, img, 224, rnd);
+            images.push_back(img);
+            labels.push_back(numeric_label);
+	    }
+    }
 }
